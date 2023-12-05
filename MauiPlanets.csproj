@@ -42,32 +42,26 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 	<ItemGroup>
-	  <AndroidResource Remove="Models\**" />
 	  <AndroidResource Remove="Resources\Styles\**" />
 	  <AndroidResource Remove="Services\**" />
 	  <AndroidResource Remove="ViewModels\**" />
 	  <AndroidResource Remove="Views\**" />
-	  <Compile Remove="Models\**" />
 	  <Compile Remove="Resources\Styles\**" />
 	  <Compile Remove="Services\**" />
 	  <Compile Remove="ViewModels\**" />
 	  <Compile Remove="Views\**" />
-	  <EmbeddedResource Remove="Models\**" />
 	  <EmbeddedResource Remove="Resources\Styles\**" />
 	  <EmbeddedResource Remove="Services\**" />
 	  <EmbeddedResource Remove="ViewModels\**" />
 	  <EmbeddedResource Remove="Views\**" />
-	  <MauiCss Remove="Models\**" />
 	  <MauiCss Remove="Resources\Styles\**" />
 	  <MauiCss Remove="Services\**" />
 	  <MauiCss Remove="ViewModels\**" />
 	  <MauiCss Remove="Views\**" />
-	  <MauiXaml Remove="Models\**" />
 	  <MauiXaml Remove="Resources\Styles\**" />
 	  <MauiXaml Remove="Services\**" />
 	  <MauiXaml Remove="ViewModels\**" />
 	  <MauiXaml Remove="Views\**" />
-	  <None Remove="Models\**" />
 	  <None Remove="Resources\Styles\**" />
 	  <None Remove="Services\**" />
 	  <None Remove="ViewModels\**" />

@@ -45,27 +45,21 @@
 	  <AndroidResource Remove="Resources\Styles\**" />
 	  <AndroidResource Remove="Services\**" />
 	  <AndroidResource Remove="ViewModels\**" />
-	  <AndroidResource Remove="Views\**" />
 	  <Compile Remove="Resources\Styles\**" />
 	  <Compile Remove="Services\**" />
 	  <Compile Remove="ViewModels\**" />
-	  <Compile Remove="Views\**" />
 	  <EmbeddedResource Remove="Resources\Styles\**" />
 	  <EmbeddedResource Remove="Services\**" />
 	  <EmbeddedResource Remove="ViewModels\**" />
-	  <EmbeddedResource Remove="Views\**" />
 	  <MauiCss Remove="Resources\Styles\**" />
 	  <MauiCss Remove="Services\**" />
 	  <MauiCss Remove="ViewModels\**" />
-	  <MauiCss Remove="Views\**" />
 	  <MauiXaml Remove="Resources\Styles\**" />
 	  <MauiXaml Remove="Services\**" />
 	  <MauiXaml Remove="ViewModels\**" />
-	  <MauiXaml Remove="Views\**" />
 	  <None Remove="Resources\Styles\**" />
 	  <None Remove="Services\**" />
 	  <None Remove="ViewModels\**" />
-	  <None Remove="Views\**" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -88,5 +82,10 @@
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Maui.Extensions" Version="6.0.536" />
 	  <PackageReference Include="Microsoft.Maui.Dependencies" Version="6.0.536" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="Views\PlanetDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 </Project>

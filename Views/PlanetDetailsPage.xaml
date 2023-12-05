@@ -1,94 +1,96 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="MauiPlanets.Views.PlanetDetailsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:MauiPlanets.Models"
-    Title="Planet Details"
-    x:DataType="models:Planet">
+    x:Class="MauiPlanets.Views.PlanetDetailsPage"
+    x:DataType="models:Planet"
+    Title="Planet Details">
 
     <Grid
         Margin="24,52,24,0"
+        IgnoreSafeArea="{OnPlatform Android=False, iOS=True}"
         ColumnDefinitions="*,*"
-        IgnoreSafeArea="{OnPlatform Android=False,
-                                    iOS=True}"
         RowDefinitions="Auto,*">
 
-        <!--  Header Icons  -->
+        <!-- Header Icons -->
         <ImageButton
+            WidthRequest="24"
+            HeightRequest="24"
+            Source="imgback.png"
             Grid.Row="0"
             Grid.Column="0"
-            Clicked="BackButton_Clicked"
-            HeightRequest="24"
             HorizontalOptions="Start"
-            Source="imgback.png"
             VerticalOptions="Center"
-            WidthRequest="24" />
+            Clicked="BackButton_Clicked" />
 
         <ImageButton
+            WidthRequest="24"
+            HeightRequest="24"
+            Source="imgmenu.png"
             Grid.Row="0"
             Grid.Column="1"
-            HeightRequest="24"
             HorizontalOptions="End"
-            Source="imgmenu.png"
-            VerticalOptions="Center"
-            WidthRequest="24" />
+            VerticalOptions="Center" />
 
 
-        <!--  Main Content ScrollView  -->
+        <!-- Main Content ScrollView -->
         <ScrollView
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            Margin="0,16,0,0"
             HorizontalScrollBarVisibility="Never"
-            VerticalScrollBarVisibility="Never">
+            VerticalScrollBarVisibility="Never"
+            Margin="0,16,0,0">
 
-            <VerticalStackLayout Spacing="18">
+            <VerticalStackLayout
+                Spacing="18">
 
-                <!--  Planet Image  -->
+                <!-- Planet Image -->
                 <Image
-                    Margin="24,0"
+                    Source="{Binding HeroImage}"
                     Aspect="AspectFit"
-                    HeightRequest="240"
                     HorizontalOptions="Fill"
-                    Source="{Binding HeroImage}" />
+                    HeightRequest="240"
+                    Margin="24,0" />
 
-                <!--  Planet Name  -->
+                <!-- Planet Name -->
                 <Label
-                    Margin="0,-24,0,0"
                     Style="{StaticResource PlanetHeaderStyle}"
-                    Text="{Binding Name}" />
+                    Text="{Binding Name}"
+                    Margin="0,-24,0,0"/>
 
-                <!--  Planet Subtitle  -->
+                <!-- Planet Subtitle -->
                 <Label
                     Margin="0,-12,0,0"
                     Style="{StaticResource PlanetHeaderSubtitleStyle}"
                     Text="{Binding Subtitle}" />
 
-                <!--  Divider  -->
+                <!-- Divider -->
                 <Rectangle
-                    Fill="{StaticResource LightBorderColor}"
-                    HeightRequest="2"
                     HorizontalOptions="Fill"
-                    Stroke="Transparent" />
+                    HeightRequest="2"
+                    Stroke="Transparent"
+                    Fill="{StaticResource LightBorderColor}" />
 
-                <!--  Planet Info  -->
+                <!-- Planet Info -->
                 <Label
-                    LineBreakMode="WordWrap"
                     Style="{StaticResource PlanetDetailsTextStyle}"
+                    LineBreakMode="WordWrap"
                     Text="{Binding Description}" />
 
 
-                <!--  Divider  -->
+                <!-- Divider -->
                 <Rectangle
-                    Fill="{StaticResource LightBorderColor}"
-                    HeightRequest="2"
                     HorizontalOptions="Fill"
-                    Stroke="Transparent" />
+                    HeightRequest="2"
+                    Stroke="Transparent"
+                    Fill="{StaticResource LightBorderColor}" />
 
-                <!--  Planet Gallery  -->
-                <Label Style="{StaticResource PlanetHeaderSubtitleStyle}" Text="Gallery" />
+                <!-- Planet Gallery -->
+                <Label
+                    Style="{StaticResource PlanetHeaderSubtitleStyle}"
+                    Text="Gallery" />
 
                 <CollectionView
                     Margin="0,-6,0,0"
@@ -96,19 +98,23 @@
                     ItemsSource="{Binding Images}">
 
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="16" Orientation="Horizontal" />
+                        <LinearItemsLayout
+                            Orientation="Horizontal"
+                            ItemSpacing="16" />
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Image
+                                Source="{Binding .}"
                                 Aspect="AspectFill"
                                 HorizontalOptions="Fill"
-                                Source="{Binding .}"
                                 VerticalOptions="Fill"
                                 WidthRequest="160">
                                 <Image.Clip>
-                                    <RoundRectangleGeometry CornerRadius="16" Rect="0,0,160,160" />
+                                    <RoundRectangleGeometry
+                                        Rect="0,0,160,160"
+                                        CornerRadius="16" />
                                 </Image.Clip>
                             </Image>
                         </DataTemplate>

@@ -2,7 +2,7 @@
 
 namespace MauiPlanets.Services;
 
-internal static class PlanetsService
+public static class PlanetsService
 {
     private static List<Planet> planets = new()
     {

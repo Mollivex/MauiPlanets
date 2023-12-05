@@ -10,6 +10,5 @@ global using global::Microsoft.Maui.Hosting;
 global using global::Microsoft.Maui.Graphics;
 global using global::Microsoft.Maui.LifecycleEvents;
 
-//global using MauiPlanets.Views;
-//global using MauiPlanets.Models;
-//global using MauiPlanets.Services;
+global using MauiPlanets.Models;
+global using MauiPlanets.Services;

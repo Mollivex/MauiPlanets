@@ -10,8 +10,6 @@ public partial class StartPage : ContentPage
     {
         base.OnAppearing();
 
-        IsBusy = true;
-
         if (this.AnimationIsRunning("TransitionAnimation"))
             return;
 
@@ -35,7 +33,7 @@ public partial class StartPage : ContentPage
 
     }
 
-     async void ExploreNow_Clicked(System.Object sender, System.EventArgs e)
-		=> Application.Current.MainPage = new NavigationPage(new PlanetsPage());
+    async void ExploreNow_Clicked(System.Object sender, System.EventArgs e) 
+        => await Navigation.PushAsync(new NavigationPage(new PlanetsPage()));
 
 }
